@@ -3,7 +3,8 @@ use std::fs;
 fn main() {
     let mut increased_counter = 0;
 
-    let file_contents = fs::read_to_string("../../../inputs.txt").unwrap();
+    let file_contents = fs::read_to_string("../../../inputs.txt").unwrap().replace("\r","");
+
     let mut splits = file_contents.split("\n");
     let mut last_value = splits.next().unwrap().parse::<i32>().unwrap();
 
