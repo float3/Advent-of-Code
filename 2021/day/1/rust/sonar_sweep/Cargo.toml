@@ -1,5 +1,5 @@
 [package]
-name = "sonar_sweep_part_one"
+name = "sonar_sweep"
 version = "0.1.0"
 edition = "2021"
 
