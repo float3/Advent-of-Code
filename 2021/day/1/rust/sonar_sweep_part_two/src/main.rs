@@ -1,7 +1,7 @@
 use std::fs;
 
 fn main() {
-    let output = count_increases("../../../inputs.txt");
+    let output = count_increases("../../inputs.txt");
 
     match output {
         Some(count) => println!("The number of increases is: {}", count),
