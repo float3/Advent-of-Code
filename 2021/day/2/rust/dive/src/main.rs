@@ -1,16 +1,12 @@
-use std::fs;
-
-const INPUT_FILE: &str = "../../inputs.txt";
-
 fn main() {
-    let distance = distance_traveled(INPUT_FILE);
+    let distance = distance_traveled(include_str!("../../../inputs.txt"));
 
     match distance {
         Some(count) => println!("The distance traveled is: {}", count),
         None => println!("Error"),
     }
 
-    let correct_distance = correct_distance_traveled(INPUT_FILE);
+    let correct_distance = correct_distance_traveled(include_str!("../../../inputs.txt"));
 
     match correct_distance {
         Some(count) => println!("The correct distance traveled is: {}", count),
@@ -18,8 +14,8 @@ fn main() {
     }
 }
 
-fn distance_traveled(path: &str) -> Option<i32> {
-    let file_contents = fs::read_to_string(path).ok()?.replace("\r", "");
+fn distance_traveled(input: &str) -> Option<i32> {
+    let file_contents = input.replace("\r", "");
     let splits = file_contents.split("\n");
 
     let mut depth = 0;
@@ -43,8 +39,8 @@ fn distance_traveled(path: &str) -> Option<i32> {
     Some(depth * horizontal_pos)
 }
 
-fn correct_distance_traveled(path: &str) -> Option<i32> {
-    let file_contents = fs::read_to_string(path).ok()?.replace("\r", "");
+fn correct_distance_traveled(input: &str) -> Option<i32> {
+    let file_contents = input.replace("\r", "");
     let splits = file_contents.split("\n");
 
     let mut depth = 0;
