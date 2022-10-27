@@ -1,16 +1,12 @@
-use std::fs;
-
-const INPUT_FILE: &str = "../../inputs.txt";
-
 fn main() {
-    let increases = count_increases(INPUT_FILE);
+    let increases = count_increases(include_str!("../../../inputs.txt"));
 
     match increases {
         Some(count) => println!("The number of increases is: {}", count),
         None => println!("Error"),
     }
 
-    let averaged_increases = count_averaged_increases(INPUT_FILE);
+    let averaged_increases = count_averaged_increases(include_str!("../../../inputs.txt"));
 
     match averaged_increases {
         Some(count) => println!("The number of averaged increases is: {}", count),
@@ -18,10 +14,10 @@ fn main() {
     }
 }
 
-fn count_increases(path: &str) -> Option<i32> {
+fn count_increases(input: &str) -> Option<i32> {
     let mut increased_counter = 0;
 
-    let file_contents = fs::read_to_string(path).ok()?.replace("\r", "");
+    let file_contents = input.replace("\r", "");
 
     let mut splits = file_contents.split("\n");
     let mut last_value = splits.next()?.parse::<i32>().ok()?;
@@ -37,10 +33,10 @@ fn count_increases(path: &str) -> Option<i32> {
     Some(increased_counter)
 }
 
-fn count_averaged_increases(path: &str) -> Option<i32> {
+fn count_averaged_increases(input: &str) -> Option<i32> {
     let mut increased_counter = 0;
 
-    let file_contents = fs::read_to_string(path).ok()?.replace("\r", "");
+    let file_contents = input.replace("\r", "");
 
     let splits = file_contents
         .split("\n")
