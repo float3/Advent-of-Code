@@ -15,14 +15,14 @@ fn main() {
 }
 
 fn distance_traveled(input: &str) -> Option<i32> {
-    let file_contents = input.replace("\r", "");
-    let splits = file_contents.split("\n");
+    let file_contents = input.replace('\r', "");
+    let splits = file_contents.split('\n');
 
     let mut depth = 0;
     let mut horizontal_pos = 0;
 
     for instruction in splits {
-        let mut instruction_splits = instruction.split(" ");
+        let mut instruction_splits = instruction.split(' ');
 
         let instruction = instruction_splits.next()?;
 
@@ -40,15 +40,15 @@ fn distance_traveled(input: &str) -> Option<i32> {
 }
 
 fn correct_distance_traveled(input: &str) -> Option<i32> {
-    let file_contents = input.replace("\r", "");
-    let splits = file_contents.split("\n");
+    let file_contents = input.replace('\r', "");
+    let splits = file_contents.split('\n');
 
     let mut depth = 0;
     let mut horizontal_pos = 0;
     let mut aim = 0;
 
     for instruction in splits {
-        let mut instruction_splits = instruction.split(" ");
+        let mut instruction_splits = instruction.split(' ');
 
         let instruction = instruction_splits.next()?;
 

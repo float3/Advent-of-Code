@@ -17,9 +17,9 @@ fn main() {
 fn count_increases(input: &str) -> Option<i32> {
     let mut increased_counter = 0;
 
-    let file_contents = input.replace("\r", "");
+    let file_contents = input.replace('\r', "");
 
-    let mut splits = file_contents.split("\n");
+    let mut splits = file_contents.split('\n');
     let mut last_value = splits.next()?.parse::<i32>().ok()?;
 
     for current_line in splits {
@@ -36,10 +36,10 @@ fn count_increases(input: &str) -> Option<i32> {
 fn count_averaged_increases(input: &str) -> Option<i32> {
     let mut increased_counter = 0;
 
-    let file_contents = input.replace("\r", "");
+    let file_contents = input.replace('\r', "");
 
     let splits = file_contents
-        .split("\n")
+        .split('\n')
         .map(|x| x.parse::<i32>())
         .collect::<Result<Vec<i32>, _>>()
         .ok()?;
