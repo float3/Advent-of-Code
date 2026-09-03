@@ -1,7 +1,19 @@
 version: 2
 updates:
   - package-ecosystem: cargo
-    directory: "/"
+    directory: "/2021/day/1/rust/sonar_sweep"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: cargo
+    directory: "/2021/day/2/rust/dive"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: cargo
+    directory: "/2021/day/3/rust/binary_diagnostic"
     schedule:
       interval: weekly
     open-pull-requests-limit: 10
