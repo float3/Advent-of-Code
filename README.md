@@ -1,8 +1,8 @@
-# Advent of Code
+# advent of code
 
-Solutions in Rust. Each day lives in `<year>/day/<n>/rust/<name>` with its puzzle input next to it in `<year>/day/<n>/inputs.txt`.
+solutions in Rust. each day lives in `<year>/day/<n>/rust/<name>` with its puzzle input next to it in `<year>/day/<n>/inputs.txt`.
 
-## Run
+## run
 
 ```sh
 cd 2021/day/1/rust/sonar_sweep
